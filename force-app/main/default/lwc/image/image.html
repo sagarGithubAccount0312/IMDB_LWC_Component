@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Upload Image" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <!-- <input type="file" accept="image/*" onchange={handleImageChange}/> -->
+            <lightning-file-upload name="imageFile" label="Upload Image" accept=".jpg,.jpeg,.png" onuploadfinished={handleImageChange}></lightning-file-upload>
+            <template if:true={imageUrl}>
+                <h2>Here is your uploaded image:</h2>
+                <img src={imageUrl} alt="Uploaded Image" class="uploaded-image"/>
+            </template>
+        </div>
+    </lightning-card>
+</template>
